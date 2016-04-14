@@ -1,0 +1,32 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <keyboard-shortcut key="goto.four.oh.four" i18n-name-key="keyboard.shortcut.four.oh.four" name="Page not found">
+        <order>200</order>
+        <description key="keyboard.shortcut.four.oh.four.desc">Page not found</description>
+        <shortcut>404</shortcut>
+        <operation type="goTo">/four-oh-four</operation>
+        <context>global</context>
+    </keyboard-shortcut>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="confluence-tutorial-keyboard-shortcuts"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="confluence-tutorial-keyboard-shortcuts-resources" name="confluence-tutorial-keyboard-shortcuts Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="confluence-tutorial-keyboard-shortcuts.css" location="/css/confluence-tutorial-keyboard-shortcuts.css"/>
+        <resource type="download" name="confluence-tutorial-keyboard-shortcuts.js" location="/js/confluence-tutorial-keyboard-shortcuts.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>confluence-tutorial-keyboard-shortcuts</context>
+    </web-resource>
+    
+</atlassian-plugin>

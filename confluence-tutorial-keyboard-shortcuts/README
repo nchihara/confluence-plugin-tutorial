@@ -1,0 +1,8 @@
+Confluence Plugin development tutorial : 
+[Title] Adding Confluence Keyboard Shortcuts
+[URL]   https://developer.atlassian.com/confdev/tutorials/adding-confluence-keyboard-shortcuts
+
+- Confleunce 5.9.8 (latest version on April 14/2016)
+- Idea Intellj 14
+
+note: you don't have to write any Java code in this example
