@@ -1,0 +1,12 @@
+Confluence Plugin example : Extending Autoconvert
+https://developer.atlassian.com/confdev/tutorials/extending-autoconvert
+
+- Confluence 5.9.9 (latest version on May-10-2016)
+- Atlassian Plugin SDK 6.2.6
+
+[note]
+This plugin converts URL only Pasted (Ctrl+V or etc). Do not input URL with "h t t p s...." by keyboard.
+
+URL to be converted must be
+    https://developer.atlassian.com/confdev/.../.......
+because of real URL of Confluence documents on developer.atlassian.com (they are not https://developer.atlassian.com/display/CONFDEV/....)

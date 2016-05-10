@@ -1,0 +1,34 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="confluence-autoconvert-dev-docs"/>
+    
+    <!-- add our web resources -->
+<!--
+    <web-resource key="confluence-autoconvert-dev-docs-resources" name="confluence-autoconvert-dev-docs Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <dependency>com.atlassian.auiplugin</dependency>
+
+        <resource type="download" name="confluence-autoconvert-dev-docs.css" location="/css/confluence-autoconvert-dev-docs.css"/>
+        <resource type="download" name="confluence-autoconvert-dev-docs.js" location="/js/confluence-autoconvert-dev-docs.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>confluence-autoconvert-dev-docs</context>
+    </web-resource>
+-->
+    <web-resource key="autoconvert-dev-docs" name="Autoconvert developer.atlassian.com example handler">
+        <description>Changes link text for URLs pasted from https://developer.atlassian.com.</description>
+        <resource type="download" name="confluence-autoconvert-dev-docs.js" location="js/confluence-autoconvert-dev-docs.js"/>
+        <!-- This will ensure the resource is loaded after autoconvert, and only if autoconvert is enabled. -->
+        <dependency>com.atlassian.confluence.plugins.confluence-paste:autoconvert-core</dependency>
+        <!-- Assuming the dependency above is met, this context means that whenever the editor is loaded, so is your autoconvert handler. -->
+        <context>editor</context>
+     </web-resource>
+</atlassian-plugin>
