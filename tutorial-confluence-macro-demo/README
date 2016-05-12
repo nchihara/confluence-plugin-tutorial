@@ -1,0 +1,12 @@
+Confluence Plugin SDK example : Create a New Confluence Macro
+	URL:https://developer.atlassian.com/confdev/tutorials/macro-tutorials-for-confluence/creating-a-new-confluence-macro
+
+- Confluence 5.9.10
+- Plugin SDK 6.2.6 with JDK 1.8.0_19
+- Intellj 14
+
+note:
+- added annotations below:
+	@Named
+	@ComponentImport
+	@Inject
