@@ -1,0 +1,23 @@
+{namespace Confluence.HighlightDemoDialogs.Templates}
+
+/**
+ * Create Highlight Dialog content
+ *
+ * @param highlightText
+ * @param foundNum
+ */
+{template .createDialogContent}
+    <h3>
+        {getText('highlightdemo.dialog.header.text')}
+    </h3>
+    <span>
+        {$highlightText}
+    </span>
+    <br/>
+    <div>
+        <b>
+            {getText('highlightdemo.dialog.text.foundnumber')}
+        </b>
+        {$foundNum}
+    </div>
+{/template}

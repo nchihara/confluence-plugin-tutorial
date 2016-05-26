@@ -1,0 +1,45 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="i18n"/>
+
+    <!-- add our web resources -->
+    <web-resource key="confluence-highlight-action-demo-plugin-resources" name="confluence-highlight-action-demo-plugin Web Resources">
+        <!-- transform calls to AJS.getText() inside JS files -->
+        <transformation extension="js">
+            <transformer key="jsI18n"/>
+        </transformation>
+
+        <!-- transform Soy templates into JS -->
+        <transformation extension="soy">
+            <transformer key="soyTransformer">
+                <functions>com.atlassian.confluence.plugins.soy:soy-core-functions</functions>
+            </transformer>
+        </transformation>
+
+<!--        <dependency>com.atlassian.auiplugin:ajs</dependency> -->
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+
+        <resource type="download" name="confluence-highlight-action-demo-plugin.css" location="/css/confluence-highlight-action-demo-plugin.css"/>
+        <resource type="download" name="highlight-action-demo-dialog.js" location="/js/highlight-action-demo-dialog.js"/>
+        <resource type="download" name="panel-helper.js" location="/js/panel-helper.js"/>
+        <resource type="download" name="highlight- demo-dialog.js" location="/templates/highlight-demo-dialog.soy"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>viewcontent</context>
+    </web-resource>
+
+    <!-- register a button when hightlighting text -->
+    <web-item key="show-matched-text" name="Show matched text in page" section="page.view.selection/action-panel" weight="30">
+        <label key="page.view.selection.action-panel.show-matched-text"/>
+        <styleClass>aui-iconfont-devtools-file-commented</styleClass>
+    </web-item>
+
+</atlassian-plugin>

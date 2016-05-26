@@ -1,0 +1,3 @@
+AJS.toInit(function($) { var PLUGIN_KEY = "com.atlassian.plugins.tutorial.confluence-highlight-action-demo-plugin:show-matched-text";
+    Confluence && Confluence.HighlightAction && Confluence.HighlightAction.registerButtonHandler(PLUGIN_KEY, { onClick: function(selectionObject) { Confluence.HighlightDemoDialogs.showHighlightDemoDialog(selectionObject); },
+        shouldDisplay: Confluence.HighlightAction.WORKING_AREA.MAINCONTENT_ONLY }); });
